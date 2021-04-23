@@ -1,0 +1,8 @@
+antlr4-python3-runtime==4.7
+jupyter==1.0.0
+numpy
+pandas
+scikit-learn
+scipy
+tensorflow
+requests
