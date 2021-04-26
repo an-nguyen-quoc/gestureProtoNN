@@ -9,16 +9,16 @@
 
 Featurizer::Featurizer(
     int _bucketWidth, 
-    FIFOCircularQ<float, 8> *_ngon_1, 
-    FIFOCircularQ<float, 8> *_ngon_2,
-    FIFOCircularQ<float, 8> *_ngon_3,
-    FIFOCircularQ<float, 8> *_ngon_4,
-    FIFOCircularQ<float, 8> *_ngon_5,
-    FIFOCircularQ<float, 8> *_x,
-    FIFOCircularQ<float, 8> *_y,
-    FIFOCircularQ<float, 8> *_z
+    FIFOCircularQ<float, 20> *_ngon_1, 
+    FIFOCircularQ<float, 20> *_ngon_2,
+    FIFOCircularQ<float, 20> *_ngon_3,
+    FIFOCircularQ<float, 20> *_ngon_4,
+    FIFOCircularQ<float, 20> *_ngon_5,
+    FIFOCircularQ<float, 20> *_x,
+    FIFOCircularQ<float, 20> *_y,
+    FIFOCircularQ<float, 20> *_z
     ){
-    if(_bucketWidth != 8) 
+    if(_bucketWidth != 20) 
         exit(-1);
     this->ngon_1 = _ngon_1;
     this->ngon_2 = _ngon_2;
@@ -54,7 +54,7 @@ int Featurizer::featurize(int bucketDistribution[]){
 }
 
 int Featurizer::getBucket(
-    FIFOCircularQ<float, 8>*sensorValue1D,
+    FIFOCircularQ<float, 20>*sensorValue1D,
     int bucketDistribution[]
     ){
     sensorValue1D->flatten(sensorValue1Dflat);
@@ -63,7 +63,7 @@ int Featurizer::getBucket(
         bucketCount;
     bool flagPos = false, flagNeg = false;
     float j,k;
-    for(int i =0; i < 8; i++){
+    for(int i =0; i < 20; i++){
         // This typecasting and all the further values are
         // scaled to optimize performance
         int val = (int)100 *sensorValue1Dflat[i];
@@ -71,9 +71,9 @@ int Featurizer::getBucket(
         if(val < 0){
             bucketDistribution[bucketIndex]+=1;
         } else if(val > 100){
-            bucketDistribution[bucketIndex+3]+=1;
+            bucketDistribution[bucketIndex+19]+=1;
         } else {
-            int index=val/25;
+            int index=val/5;
             bucketDistribution[bucketIndex+index]+=1;
         } 
 

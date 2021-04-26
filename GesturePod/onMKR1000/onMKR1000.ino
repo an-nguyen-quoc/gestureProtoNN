@@ -46,7 +46,7 @@
 #include "src/protoNN.h"
 #include "src/featurizer.h"
 #include "src/utils.h"
-
+#include <SoftwareSerial.h>
 // include Arduino.h before wiring_private.h
 #include <Arduino.h>   
 
@@ -62,8 +62,8 @@
 
 
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
-const int WINDOWS = 8;
-const int INDEX_MAX_LABEL = 5;
+const int WINDOWS = 20;
+const int INDEX_MAX_LABEL = 33;
 const int THUMB = A0; //pin A0 to read analog input
 const int INDEX_FINGER = A1;
 const int MIDDLE_FINGER = A2;
@@ -127,10 +127,24 @@ const char *GESTURE_TO_COMMUNICATE[INDEX_MAX_LABEL] = {"", "A", "B", "C", "D"};
 // Function Signature
 int featurize_and_predict(int ngon_1, int ngon_2, int ngon_3, int ngon_4, int ngon_5, float acc_x, float acc_y, float acc_z);
 
+
+//Ham gui bluetooth
+char getCommand() {
+  char char_command;
+  if (Serial2.available() > 0) {
+    char_command = (char)Serial2.read();
+  } else {
+    char_command = 0;
+  }
+
+  return char_command;
+}
+
 void setup() {
     bool initSuccess = true;
     
     Serial.begin(9600);
+    Serial2.begin(19200);
     Serial.print(BAUD_RATE);
     delay(2000);
      Serial.print("before get error code");
@@ -166,11 +180,24 @@ void setup() {
 }
 
 void loop() {
+//  char char_command = getCommand();
+//
+//   if (char_command != 0) {
+////    int index = random(N_SYMBOLS);
+////    char result = alphabet[index];
+//    char _temp = 'A';
+//    Serial2.write(_temp);
+////    Serial.println(char_command);
+//  }
   sensors_event_t event; 
 //        Serial.print(millis());
 //        Serial.println("loop");
+        if ((millis() - START_TIME) % 2000 == 0)
+                  {
+                    Serial2.write('A');
+                  }
         if ((millis() - START_TIME) % 100 == 0)
-        {
+        {          
 //        Serial.println("get data");
   
   accel.getEvent(&event);
@@ -269,5 +296,7 @@ int featurize_and_predict(int ngon_1, int ngon_2, int ngon_3, int ngon_4, int ng
 //   Serial.print(" Vote Result: "); Serial.println(VOTE_RESULT);
     
     Serial.println(result);
+    
+//    Serial2.write(byte(result));
     return 0;
 }

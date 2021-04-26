@@ -12,12 +12,12 @@
 #include "utils.h"
 
 class Featurizer {
-    FIFOCircularQ<float, 8> *ngon_1, *ngon_2, *ngon_3, *ngon_4, *ngon_5, *X, *Y, *Z;
-    float sensorValue1Dflat[8];
+    FIFOCircularQ<float, 20> *ngon_1, *ngon_2, *ngon_3, *ngon_4, *ngon_5, *X, *Y, *Z;
+    float sensorValue1Dflat[20];
     int bucketIndex;
-    int bucketWidth=8; // Default value of number of buckets 
+    int bucketWidth=20; // Default value of number of buckets 
     int getBucket(
-        FIFOCircularQ<float, 8>*, 
+        FIFOCircularQ<float, 20>*, 
         int bucketDistribution[]);
     /*
      * Format of feature vector:[longestPosIndex,longestPosCount,
@@ -28,14 +28,14 @@ class Featurizer {
 public:
     Featurizer(
         int bucketWidth, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>*, 
-        FIFOCircularQ<float, 8>* 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>*, 
+        FIFOCircularQ<float, 20>* 
         );
     int featurize(int bucketDistribution[]);
 };

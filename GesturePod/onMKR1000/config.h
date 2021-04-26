@@ -27,7 +27,7 @@
  * The number of buckets that are in one feature
  * vector
  */
-#define NUM_BUCKETS 			8 // số lượng feature.
+#define NUM_BUCKETS 			20 // số lượng feature.
 /*
  * The stride in terms of number of
  * measurements (instances) that is used for featurization.
@@ -40,15 +40,15 @@
  * values. (Accel and Gyro values are of type Vector16).
  */
 #define BUCKET_BUFF_WIDTH 		(2 * BUCKET_WIDTH)
-#define BUCKET_WIDTH 			8 // độ dài một mẫu dữ liệu
-#define FEATURE_LENGTH			36 // bằng 8 nhân số histogram , + 4
+#define BUCKET_WIDTH 			20 // độ dài một mẫu dữ liệu
+#define FEATURE_LENGTH			(8 * BUCKET_WIDTH + 4)  // bằng 8 nhân số histogram , + 4
 /*
  * For the current set of features, we have 6 features
  * per bucket - the standard deviations for the 6 raw
  * values. Hence the feature vector dimension is 
  * `6 x NUM_BUCKETS`+ Indices and length of max and min values of gy.
  */
-#define FEAT_VEC_DIM 			36 // 8 nhân số histogram + 4
+#define FEAT_VEC_DIM 			((8 * NUM_BUCKETS) + 4) // 8 nhân số histogram + 4
 
 /* Minimum and Maximum Acceleration and Gyro
  * Values for Min-Max normalisation.

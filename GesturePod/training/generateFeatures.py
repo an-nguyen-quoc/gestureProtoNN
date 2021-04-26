@@ -27,14 +27,9 @@ labelledFileList = [
     # They are delt with separately - allNoiseFileList.
     
     
-    'a_0.csv',
-    'a_2.csv',
-    'b_0.csv',
-    'b_1.csv',
-    'c_0.csv',
-    'c_1.csv',
-    'c_2.csv',
-    'd_0.csv',
+    'toi1.csv',
+    'an1.csv',
+    'di_bo1.csv',
     
 ]
 
@@ -54,9 +49,8 @@ allNoiseFileList = [
     # 'raw_06_01_00.csv',
     # 'raw_06_01_01.csv',
     # 'raw_06_01_02.csv',
-    # 'raw.csv'
-    'noise_0.csv',
-    'noise_1.csv'
+    # 'raw.csv'    
+    'noise1.csv'
     
 ]
 
@@ -247,7 +241,7 @@ def binningFeatures(dataFrame, hyperParams):
             tot = 0
             for key in freqDict:
                 tot += freqDict[key][i]
-            assert tot == 8, i
+            assert tot == 20, i
             # print("tot: ",  tot)
 
         for key in freqDict:
@@ -367,9 +361,9 @@ def main(inputFolder, outputFolder, fileList,
          isDebug=False, collapse=True):
     rawColumns = ['Ngon_1', 'Ngon_2', 'Ngon_3', 'Ngon_4', 'Ngon_5', 'X', 'Y', 'Z']
     hyperParams = {
-        'windowWidth': 8,
+        'windowWidth': 20,
         'windowStride': 1,
-        'numHistogramBins': 4,
+        'numHistogramBins': 20,
         'rawColumns': rawColumns,
         # for N pertubations (including original), set below value to N/2
         # (True - N, True + N]
