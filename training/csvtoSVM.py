@@ -57,4 +57,4 @@ for line in reader:
     
 	new_line = construct_line( label, line )
 	o.write( new_line )
-	print('Here')
+	# print('Here')

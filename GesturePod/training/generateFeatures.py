@@ -27,9 +27,13 @@ labelledFileList = [
     # They are delt with separately - allNoiseFileList.
     
     
-    'toi1.csv',
-    'an1.csv',
-    'di_bo1.csv',
+    'awn_1.csv',
+    'tooi_1.csv',
+    'tooi_2.csv',
+    'i_love_you_1.csv',
+    'di_bo_1.csv',
+    
+    
     
 ]
 
@@ -50,7 +54,13 @@ allNoiseFileList = [
     # 'raw_06_01_01.csv',
     # 'raw_06_01_02.csv',
     # 'raw.csv'    
-    'noise1.csv'
+    'noise1.csv',
+    'noise2.csv',
+    'noise_1.csv',
+    'noise_2.csv',
+    'noise_3.csv',
+    'noise_4.csv'
+    
     
 ]
 
@@ -150,7 +160,7 @@ def longestPosNegFeatures(dataFrame, hyperParams):
     dataFrame['longestNegEdge'] = 0
     dataFrame['longestPosCount'] = 0
     dataFrame['longestNegCount'] = 0
-    colIndex = dataFrame.columns.get_loc('norm_Ngon_1')
+    colIndex = dataFrame.columns.get_loc('norm_Y')
     colIndexPos = dataFrame.columns.get_loc('longestPosEdge')
     colIndexNeg = dataFrame.columns.get_loc('longestNegEdge')
     colIndexPosCount = dataFrame.columns.get_loc('longestPosCount')
@@ -241,7 +251,7 @@ def binningFeatures(dataFrame, hyperParams):
             tot = 0
             for key in freqDict:
                 tot += freqDict[key][i]
-            assert tot == 20, i
+            assert tot == 10, i
             # print("tot: ",  tot)
 
         for key in freqDict:
@@ -361,22 +371,22 @@ def main(inputFolder, outputFolder, fileList,
          isDebug=False, collapse=True):
     rawColumns = ['Ngon_1', 'Ngon_2', 'Ngon_3', 'Ngon_4', 'Ngon_5', 'X', 'Y', 'Z']
     hyperParams = {
-        'windowWidth': 20,
+        'windowWidth': 10,
         'windowStride': 1,
-        'numHistogramBins': 20,
+        'numHistogramBins': 10,
         'rawColumns': rawColumns,
         # for N pertubations (including original), set below value to N/2
         # (True - N, True + N]
-        'pertubations': 4,
+        'pertubations': 5,
         'minMaxDict': {
-            'Ngon_1': {'min': -600, 'max': 600},
-            'Ngon_2': {'min': -600, 'max': 600},
-            'Ngon_3': {'min': -600, 'max': 600},
-            'Ngon_4': {'min': -600, 'max': 600},
-            'Ngon_5': {'min': -600, 'max': 600},
-            'X': {'min': -100, 'max': 100},
-            'Y': {'min': -100, 'max': 100},
-            'Z': {'min': -100, 'max': 100},
+            'Ngon_1': {'min': 0, 'max': 400},
+            'Ngon_2': {'min': 0, 'max': 600},
+            'Ngon_3': {'min': 0, 'max': 400},
+            'Ngon_4': {'min': 0, 'max': 600},
+            'Ngon_5': {'min': 0, 'max': 500},
+            'X': {'min': -20, 'max': 20},
+            'Y': {'min': -20, 'max': 20},
+            'Z': {'min': -20, 'max': 20},
             
         },
     }

@@ -1,0 +1,29 @@
+tôi: 3 = IF(AND(E2>310, F2>250), 3, 0)
+ăn: 4 = IF(AND( E2>300, F2>220),4, 0)
+i love you: 5 = IF(AND( E2>300, D2>180),5, 0)
+đi bộ: 6 = =IF(AND( E2>300, F2>250),6, 0)
+thương: 7 = =IF(AND( E2>320, F2>230, D2>200),7, 0)
+ông: 8 = = IF(AND(C2>250,E2>300,F2>250),8,0)
+bà
+nam
+nữ
+uống
+con vịt
+con kiến
+cá ngựa
+cam
+chanh
+táo
+dâu tây
+bia
+con chim
+nóng
+du lịch
+hát
+khuyên bảo
+màu tím
+màu vàng
+bút chì
+đắng.
+
+25 * 10 = 4 tiếng???
