@@ -2,7 +2,7 @@ import numpy as np
 
 gamma = np.load('after_train/gamma.npy')
 
-print('gamma = ', gamma)
+print(gamma)
 img_array = np.load('after_train/B.npy')
 
 #print(img_array)
