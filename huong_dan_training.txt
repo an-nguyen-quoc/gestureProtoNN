@@ -1,5 +1,8 @@
 CÁC BƯỚC TRAINING.
 
+
+
+
 Bước 1: Clone code từ git về:
 git clone https://github.com/an-nguyen-quoc/gestureProtoNN.git
 
