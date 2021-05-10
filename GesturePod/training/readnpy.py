@@ -4,7 +4,7 @@ img_array = np.load('after_train/W.npy')
 index = 0
 f = open("after_train/W", "w")
 
-row = 84
+row = 164
 col = 8
 
 for i in range(col):

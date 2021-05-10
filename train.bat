@@ -14,7 +14,7 @@ python "csvtoSVM.py" "gesture\in\_test.csv" "gesture\in\test.txt" 0 1
 
 python process_usps.py
 
-python protoNN_example.py -d "gesture\in" -o "gesture\out" -l 8 -p 100 -e 50
+python protoNN_example.py -d "gesture\in" -o "gesture\out" -l 8 -p 100 -e 30
 del "G:\2021\Lab\Final_Project\OneDrive - Hanoi University of Science and Technology\Final_Project\source_code\source_code\gestureProtoNN\GesturePod\training\after_train\*" /s /f /q
 
 move "G:\2021\Lab\Final_Project\OneDrive - Hanoi University of Science and Technology\Final_Project\source_code\source_code\gestureProtoNN\training\gesture\out\*" "G:\2021\Lab\Final_Project\OneDrive - Hanoi University of Science and Technology\Final_Project\source_code\source_code\gestureProtoNN\GesturePod\training\after_train"
