@@ -14,7 +14,7 @@
 
 
 // Max label index used for Vote Class
-#define MAX_LABEL_INDEX 40
+#define MAX_LABEL_INDEX 20
 
 /*
  ********************************

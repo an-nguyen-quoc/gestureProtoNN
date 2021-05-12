@@ -26,22 +26,19 @@ labelledFileList = [
     # Should not contain files with only noise.
     # They are delt with separately - allNoiseFileList.
     
-    
+    'khuyenbao.csv',
+    'uong.csv' ,
     'awn_1.csv',
     'tooi_1.csv',
     'tooi_2.csv',
     'i_love_you_1.csv',
     'di_bo_1.csv',
     'bia.csv',
-    'nong_1.csv',
-    'nong_2.csv',
     'oong_1.csv',
     'oong_2.csv',
     'qua_cam.csv',
     'qua_dau_tay.csv',
-    'ba.csv',
-    'khuyenbao.csv',
-    'uong.csv'    
+       
     
 ]
 
@@ -259,7 +256,7 @@ def binningFeatures(dataFrame, hyperParams):
             tot = 0
             for key in freqDict:
                 tot += freqDict[key][i]
-            #assert tot == 20, i
+            assert tot == 10, i
             # print("tot: ",  tot)
 
         for key in freqDict:
@@ -379,13 +376,13 @@ def main(inputFolder, outputFolder, fileList,
          isDebug=False, collapse=True):
     rawColumns = ['Ngon_1', 'Ngon_2', 'Ngon_3', 'Ngon_4', 'Ngon_5', 'X', 'Y', 'Z']
     hyperParams = {
-        'windowWidth': 20,
+        'windowWidth': 10,
         'windowStride': 1,
-        'numHistogramBins': 20,
+        'numHistogramBins': 10,
         'rawColumns': rawColumns,
         # for N pertubations (including original), set below value to N/2
         # (True - N, True + N]
-        'pertubations': 10,
+        'pertubations': 5,
         'minMaxDict': {
             'Ngon_1': {'min': 100, 'max': 400},
             'Ngon_2': {'min': 100, 'max': 600},
@@ -449,7 +446,7 @@ def exportTLCTrainTest(inputFolder, outputFolder, fileList):
     df = df[df.label != 0]
     df = df.reset_index(drop=True)
     # Train test split
-    traindf = df.sample(frac=0.8, random_state=42)
+    traindf = df.sample(frac=0.7, random_state=42)
     testdf = df.drop(traindf.index)
     traindf.to_csv(outputFolder + '/' + '_train.csv', index=False)
     testdf.to_csv(outputFolder + '/' + '_test.csv', index=False)

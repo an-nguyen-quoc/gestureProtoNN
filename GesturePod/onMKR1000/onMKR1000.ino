@@ -63,7 +63,7 @@
 
 
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
-const int WINDOWS = 20;
+const int WINDOWS = 10;
 const int INDEX_MAX_LABEL = 15;
 const int THUMB = A0; //pin A0 to read analog input
 const int INDEX_FINGER = A1;
