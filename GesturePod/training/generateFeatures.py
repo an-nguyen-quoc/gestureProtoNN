@@ -26,28 +26,12 @@ labelledFileList = [
     # Should not contain files with only noise.
     # They are delt with separately - allNoiseFileList.
     
-<<<<<<< HEAD
     
     "tôi_1_03.csv",
     "yêu_1_05.csv",
     "đi_bộ_1_06.csv"
     
     
-=======
-    'khuyenbao.csv',
-    'uong.csv' ,
-    'awn_1.csv',
-    'tooi_1.csv',
-    'tooi_2.csv',
-    'i_love_you_1.csv',
-    'di_bo_1.csv',
-    'bia.csv',
-    'oong_1.csv',
-    'oong_2.csv',
-    'qua_cam.csv',
-    'qua_dau_tay.csv',
-       
->>>>>>> 9d60b34b4ba15254c5749febbf644c02ff6c9c6f
     
 ]
 
@@ -393,19 +377,11 @@ def main(inputFolder, outputFolder, fileList,
         # (True - N, True + N]
         'pertubations': 5,
         'minMaxDict': {
-<<<<<<< HEAD
             'Ngon_1': {'min': 0, 'max': 500},
             'Ngon_2': {'min': 0, 'max': 600},
             'Ngon_3': {'min': 0, 'max': 500},
             'Ngon_4': {'min': 0, 'max': 600},
             'Ngon_5': {'min': 0, 'max': 600},
-=======
-            'Ngon_1': {'min': 100, 'max': 400},
-            'Ngon_2': {'min': 100, 'max': 600},
-            'Ngon_3': {'min': 100, 'max': 400},
-            'Ngon_4': {'min': 100, 'max': 600},
-            'Ngon_5': {'min': 100, 'max': 500},
->>>>>>> 9d60b34b4ba15254c5749febbf644c02ff6c9c6f
             'X': {'min': -20, 'max': 20},
             'Y': {'min': -20, 'max': 20},
             'Z': {'min': -20, 'max': 20},
@@ -463,7 +439,7 @@ def exportTLCTrainTest(inputFolder, outputFolder, fileList):
     df = df[df.label != 0]
     df = df.reset_index(drop=True)
     # Train test split
-    traindf = df.sample(frac=0.7, random_state=42)
+    traindf = df.sample(frac=0.8, random_state=42)
     testdf = df.drop(traindf.index)
     traindf.to_csv(outputFolder + '/' + '_train.csv', index=False)
     testdf.to_csv(outputFolder + '/' + '_test.csv', index=False)

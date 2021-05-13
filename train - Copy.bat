@@ -1,6 +1,5 @@
 @echo run training
 
-
 del "G:\2021\Lab\Final_Project\OneDrive - Hanoi University of Science and Technology\Final_Project\source_code\source_code\gestureProtoNN\training\gesture\in\*" /s /f /q
 del "G:\2021\Lab\Final_Project\OneDrive - Hanoi University of Science and Technology\Final_Project\source_code\source_code\gestureProtoNN\training\gesture\out\*" /s /f /q
 move "_train.csv" "G:\2021\Lab\Final_Project\OneDrive - Hanoi University of Science and Technology\Final_Project\source_code\source_code\gestureProtoNN\training\gesture\in\"
