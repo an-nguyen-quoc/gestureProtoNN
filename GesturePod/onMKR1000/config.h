@@ -55,15 +55,15 @@
  * Refer ./src/minmaxnormalize.h
  */
 #define MIN_NGON_1 				0
-#define MAX_NGON_1 				400
+#define MAX_NGON_1 				500
 #define MIN_NGON_2 				0
 #define MAX_NGON_2 				600
 #define MIN_NGON_3 				0
-#define MAX_NGON_3 				400
+#define MAX_NGON_3 				500
 #define MIN_NGON_4 				0
 #define MAX_NGON_4 				600
 #define MIN_NGON_5 				0
-#define MAX_NGON_5 				500
+#define MAX_NGON_5 				600
 #define MIN_X 				-20
 #define MIN_Y 				-20
 #define MIN_Z				-20

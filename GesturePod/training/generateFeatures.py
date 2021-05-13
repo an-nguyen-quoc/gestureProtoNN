@@ -27,11 +27,9 @@ labelledFileList = [
     # They are delt with separately - allNoiseFileList.
     
     
-    'awn_1.csv',
-    'tooi_1.csv',
-    'tooi_2.csv',
-    'i_love_you_1.csv',
-    'di_bo_1.csv',
+    "tôi_1_03.csv",
+    "yêu_1_05.csv",
+    "đi_bộ_1_06.csv"
     
     
     
@@ -379,11 +377,11 @@ def main(inputFolder, outputFolder, fileList,
         # (True - N, True + N]
         'pertubations': 5,
         'minMaxDict': {
-            'Ngon_1': {'min': 0, 'max': 400},
+            'Ngon_1': {'min': 0, 'max': 500},
             'Ngon_2': {'min': 0, 'max': 600},
-            'Ngon_3': {'min': 0, 'max': 400},
+            'Ngon_3': {'min': 0, 'max': 500},
             'Ngon_4': {'min': 0, 'max': 600},
-            'Ngon_5': {'min': 0, 'max': 500},
+            'Ngon_5': {'min': 0, 'max': 600},
             'X': {'min': -20, 'max': 20},
             'Y': {'min': -20, 'max': 20},
             'Z': {'min': -20, 'max': 20},

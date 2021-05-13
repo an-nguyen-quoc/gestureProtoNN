@@ -22,7 +22,7 @@ for i in range(col):
     if i != col - 1:
         f.write('\n')
 f.close()
-print('\n')
-print(index)
-print(img_array)
-print(img_array[0])
+#print('\n')
+#print(index)
+#print(img_array)
+#print(img_array[0])
