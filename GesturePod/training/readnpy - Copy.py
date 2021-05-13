@@ -2,7 +2,11 @@ import numpy as np
 
 gamma = np.load('after_train/gamma.npy')
 
+<<<<<<< HEAD
 print( gamma)
+=======
+print(gamma)
+>>>>>>> 9d60b34b4ba15254c5749febbf644c02ff6c9c6f
 img_array = np.load('after_train/B.npy')
 
 #print(img_array)

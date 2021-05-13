@@ -5,7 +5,7 @@ index = 0
 f = open("after_train/W", "w")
 
 row = 84
-col = 8
+col = 16
 
 for i in range(col):
     # index = index + 1

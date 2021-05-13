@@ -64,7 +64,7 @@
 
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
 const int WINDOWS = 10;
-const int INDEX_MAX_LABEL = 6;
+const int INDEX_MAX_LABEL = 15;
 const int THUMB = A0; //pin A0 to read analog input
 const int INDEX_FINGER = A1;
 const int MIDDLE_FINGER = A2;
@@ -125,7 +125,7 @@ Vector3D<float> maxAcc(MAX_X, MAX_Y, MAX_Z);
 const int L = 5;
 int scores[L];
 // Gestures are mapped to classes - Do not change ordering!
-const char *GESTURE_TO_COMMUNICATE[INDEX_MAX_LABEL] = {"", "", "tôi", "ăn", "i love you", "đi bộ"};
+const char *GESTURE_TO_COMMUNICATE[INDEX_MAX_LABEL] = {"", "", "tôi", "ăn", "i love you", "đi bộ", "thương", "ông", "bà", "quả cam", "quả dâu tây", "bia", "khuyên bảo", "nóng", "uống"};
 // Function Signature
 int featurize_and_predict(int ngon_1, int ngon_2, int ngon_3, int ngon_4, int ngon_5, float acc_x, float acc_y, float acc_z);
 

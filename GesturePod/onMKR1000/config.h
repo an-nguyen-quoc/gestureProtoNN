@@ -27,7 +27,7 @@
  * The number of buckets that are in one feature
  * vector
  */
-#define NUM_BUCKETS 			10 // số lượng feature.
+#define NUM_BUCKETS 			20 // số lượng feature.
 /*
  * The stride in terms of number of
  * measurements (instances) that is used for featurization.
@@ -40,7 +40,7 @@
  * values. (Accel and Gyro values are of type Vector16).
  */
 #define BUCKET_BUFF_WIDTH 		(2 * BUCKET_WIDTH)
-#define BUCKET_WIDTH 			10 // độ dài một mẫu dữ liệu
+#define BUCKET_WIDTH 			20 // độ dài một mẫu dữ liệu
 #define FEATURE_LENGTH			(8 * BUCKET_WIDTH + 4)  // bằng 8 nhân số histogram , + 4
 /*
  * For the current set of features, we have 6 features
@@ -54,6 +54,7 @@
  * Values for Min-Max normalisation.
  * Refer ./src/minmaxnormalize.h
  */
+<<<<<<< HEAD
 #define MIN_NGON_1 				0
 #define MAX_NGON_1 				500
 #define MIN_NGON_2 				0
@@ -64,6 +65,18 @@
 #define MAX_NGON_4 				600
 #define MIN_NGON_5 				0
 #define MAX_NGON_5 				600
+=======
+#define MIN_NGON_1 				100
+#define MAX_NGON_1 				400
+#define MIN_NGON_2 				100
+#define MAX_NGON_2 				600
+#define MIN_NGON_3 				100
+#define MAX_NGON_3 				400
+#define MIN_NGON_4 				100
+#define MAX_NGON_4 				600
+#define MIN_NGON_5 				100
+#define MAX_NGON_5 				500
+>>>>>>> 9d60b34b4ba15254c5749febbf644c02ff6c9c6f
 #define MIN_X 				-20
 #define MIN_Y 				-20
 #define MIN_Z				-20
