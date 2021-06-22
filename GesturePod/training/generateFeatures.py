@@ -29,7 +29,10 @@ labelledFileList = [
     
     "tôi_1_03.csv",
     "yêu_1_05.csv",
-    "đi_bộ_1_06.csv"
+    "đi_bộ_1_06.csv",
+    "uong.csv",
+    "bia.csv",
+    "qua_dau_tay.csv"
     
     
     
@@ -51,9 +54,8 @@ allNoiseFileList = [
     # 'raw_06_01_00.csv',
     # 'raw_06_01_01.csv',
     # 'raw_06_01_02.csv',
-    # 'raw.csv'    
-    'noise1.csv',
-    'noise2.csv',
+    # 'raw.csv'
+    'nhiễu_1.csv',    
     'noise_1.csv',
     'noise_2.csv',
     'noise_3.csv',

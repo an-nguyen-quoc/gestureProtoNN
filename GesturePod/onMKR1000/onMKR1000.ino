@@ -64,7 +64,7 @@
 
 Adafruit_ADXL345_Unified accel = Adafruit_ADXL345_Unified(12345);
 const int WINDOWS = 10;
-const int INDEX_MAX_LABEL = 6;
+const int INDEX_MAX_LABEL = 9;
 const int THUMB = A0; //pin A0 to read analog input
 const int INDEX_FINGER = A1;
 const int MIDDLE_FINGER = A2;
@@ -125,7 +125,7 @@ Vector3D<float> maxAcc(MAX_X, MAX_Y, MAX_Z);
 const int L = 5;
 int scores[L];
 // Gestures are mapped to classes - Do not change ordering!
-const char *GESTURE_TO_COMMUNICATE[INDEX_MAX_LABEL] = {"", "", "tôi", "ăn", "i love you", "đi bộ"};
+const char *GESTURE_TO_COMMUNICATE[INDEX_MAX_LABEL] = {"", "", "tôi", "ăn", "i love you", "đi bộ", "dâu tây", "bia", "uống"};
 // Function Signature
 int featurize_and_predict(int ngon_1, int ngon_2, int ngon_3, int ngon_4, int ngon_5, float acc_x, float acc_y, float acc_z);
 
@@ -151,9 +151,9 @@ void setup() {
   count = 0;
   Serial.begin(9600);
   Serial2.begin(9600);
-  Serial.print(BAUD_RATE);
+  //Serial.print(BAUD_RATE);
   delay(2000);
-  Serial.print("before get error code");
+  //Serial.print("before get error code");
   if (predictor1.getErrorCode()) {
     Serial.print("ProtoNNF initialization failed with code ");
     Serial.println(predictor1.getErrorCode());
@@ -170,7 +170,7 @@ void setup() {
   }
   else
   {
-    Serial.println("True!");
+    //Serial.println("True!");
   }
 
   accel.setRange(ADXL345_RANGE_16_G);
@@ -241,8 +241,8 @@ void loop() {
     end_predict = millis();
     avg_time = (count * avg_time + (end_predict - start_predict)) / (count + 1);
     count++;
-    Serial.print("Avg: ");
-    Serial.println(avg_time);
+    //Serial.print("Avg: ");
+    //Serial.println(avg_time);
 
   }
 
@@ -304,12 +304,13 @@ int featurize_and_predict(int ngon_1, int ngon_2, int ngon_3, int ngon_4, int ng
                                   scores);
 
   // Printing of Scores to Console
-  Serial.print("Result: "); Serial.print(result + 1);
+  //Serial.print("Result: "); Serial.print(result + 1);
   //        Serial.print(",Score:") ; Serial.print(scores[result]);Serial.print(",");
   // Voting to get rid of stray gestures
   Vote1.forcePush(result);
   VOTE_RESULT = Vote1.result();
-  Serial.print(" Vote Result: "); Serial.println(GESTURE_TO_COMMUNICATE[result]);
+  //Serial.print(" Vote Result: "); 
+  Serial.println(result);
 
   //    Serial.println(result + 1);
 

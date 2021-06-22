@@ -6,7 +6,7 @@ from openpyxl import Workbook
 import os
 
 
-for file in glob.glob(".\\text\\*u_1.txt"):
+for file in glob.glob(".\\text\\nhiễu_1.txt"):
     print(file)
     with open(file, 'r') as infile: 
         df = pd.read_table(file,sep=',',header=None)
